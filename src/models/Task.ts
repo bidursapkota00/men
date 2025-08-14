@@ -7,6 +7,7 @@ export interface ITask extends Document {
   completed: boolean;
   priority: "low" | "medium" | "high";
   dueDate?: Date;
+  createdBy: mongoose.Types.ObjectId;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -34,6 +35,11 @@ const TaskSchema = new Schema<ITask>(
     },
     dueDate: {
       type: Date,
+    },
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
   },
   {

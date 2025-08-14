@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.78% </span>
+                <span class="strong">74.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/47</span>
+                <span class='fraction'>35/47</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.78% </span>
+                <span class="strong">74.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/47</span>
+                <span class='fraction'>35/47</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -130,33 +130,33 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response, RequestHandler } from "express";
 import { Task } from "../models/Task";
 &nbsp;
@@ -176,34 +176,34 @@ export const getTasks = async (req: Request, res: Response): Promise&lt;void&gt;
 <span class="cstat-no" title="statement not covered" >  }</span>
 };
 &nbsp;
-export const createTask = <span class="fstat-no" title="function not covered" >async (</span>
-<span class="cstat-no" title="statement not covered" >  req: Request,</span>
-<span class="cstat-no" title="statement not covered" >  res: Response</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;void&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    const taskData: any = req.body;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const task = new Task({</span>
-<span class="cstat-no" title="statement not covered" >      ...taskData,</span>
-<span class="cstat-no" title="statement not covered" >      // createdBy: (req as any).user._id,</span>
-<span class="cstat-no" title="statement not covered" >      dueDate: taskData.dueDate ? new Date(taskData.dueDate) : undefined,</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    await task.save();</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    res.status(201).json({</span>
-<span class="cstat-no" title="statement not covered" >      success: true,</span>
-<span class="cstat-no" title="statement not covered" >      message: "Task created successfully",</span>
-<span class="cstat-no" title="statement not covered" >      data: task,</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  } catch (error) {</span>
+export const createTask = async (
+  req: Request,
+  res: Response
+): Promise&lt;void&gt; =&gt; {
+  try {
+    const taskData: any = req.body;
+&nbsp;
+    const task = new Task({
+      ...taskData,
+      createdBy: (req as any).user._id,
+      dueDate: taskData.dueDate <span class="branch-0 cbranch-no" title="branch not covered" >? new Date(taskData.dueDate) </span>: undefined,
+    });
+&nbsp;
+    await task.save();
+&nbsp;
+    res.status(201).json({
+      success: true,
+      message: "Task created successfully",
+      data: task,
+    });
+  } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >    res.status(500).json({</span>
 <span class="cstat-no" title="statement not covered" >      success: false,</span>
 <span class="cstat-no" title="statement not covered" >      message: "Error creating task",</span>
 <span class="cstat-no" title="statement not covered" >      error: error instanceof Error ? error.message : "Unknown error",</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -211,7 +211,7 @@ export const createTask = <span class="fstat-no" title="function not covered" >a
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-01T03:09:44.776Z
+                at 2025-08-14T02:58:27.089Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

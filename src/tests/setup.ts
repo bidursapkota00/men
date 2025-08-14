@@ -1,5 +1,7 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
+import { User } from "../models/User";
+import { generateToken } from "../utils/jwt";
 
 let mongoServer: MongoMemoryServer;
 
@@ -21,3 +23,27 @@ afterEach(async () => {
     await collection.deleteMany({});
   }
 });
+
+export const createTestUser = async () => {
+  const user = new User({
+    name: "Test User",
+    email: "test@example.com",
+    password: "password123",
+  });
+  await user.save();
+
+  const token = generateToken(user._id.toString());
+  return { user, token };
+};
+
+export const createTestUser2 = async () => {
+  const user = new User({
+    name: "Test User 2",
+    email: "test2@example.com",
+    password: "password123",
+  });
+  await user.save();
+
+  const token = generateToken(user._id.toString());
+  return { user, token };
+};

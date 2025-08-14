@@ -26,7 +26,7 @@ export const createTask = async (
 
     const task = new Task({
       ...taskData,
-      // createdBy: (req as any).user._id,
+      createdBy: (req as any).user._id,
       dueDate: taskData.dueDate ? new Date(taskData.dueDate) : undefined,
     });
 
