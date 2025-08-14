@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { register, login } from "../controllers/authController";
+import { validateBody } from "../middleware/validation";
+import { loginSchema, registerSchema } from "../schemas/authSchemas";
 
 const router = Router();
 
@@ -70,7 +72,7 @@ const router = Router();
  *               $ref: '#/components/schemas/AuthResponse'
  */
 
-router.post("/register", register);
+router.post("/register", validateBody(registerSchema), register);
 
 /**
  * @swagger
@@ -100,6 +102,6 @@ router.post("/register", register);
  *             schema:
  *               $ref: '#/components/schemas/AuthResponse'
  */
-router.post("/login", login);
+router.post("/login", validateBody(loginSchema), login);
 
 export default router;

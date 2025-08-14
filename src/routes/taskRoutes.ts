@@ -2,6 +2,7 @@ import { Router } from "express";
 import { getTasks, createTask } from "../controllers/taskController";
 import { validateBody } from "../middleware/validation";
 import { createTaskSchema } from "../schemas/taskSchemas";
+import { authenticate } from "../middleware/auth";
 
 const router = Router();
 
@@ -60,6 +61,8 @@ router.get("/", getTasks);
  *   post:
  *     summary: Create a new task
  *     tags: [Tasks]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -85,6 +88,6 @@ router.get("/", getTasks);
  *       201:
  *         description: Task created successfully
  */
-router.post("/", validateBody(createTaskSchema), createTask);
+router.post("/", authenticate, validateBody(createTaskSchema), createTask);
 
 export default router;
